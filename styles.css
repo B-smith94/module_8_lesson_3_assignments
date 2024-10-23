@@ -1,0 +1,100 @@
+/*Task 1--Basic Flexbox Layout
+    -header: background image and header text, text should be bold, contrast color and centered
+    -nav menu: 3 thing (home, profile, about), arranged horizontally on the top of the page
+    -main content: at least 2 children divs with content, arranged vertically stacked on top of one another
+    -footer: at least 3 sections (contact us, events, blog), arranged horizontally
+    
+Task 2--Implement Responsive Design
+    -Modify to include responsive design elements
+    -Media Query: convert nav and footer into coluns when viewport width < 600px
+
+Task 3--Enhance the Layout with Flexbox Properties
+    -Further enhance laoyout using justify-content, align-items, and flex-grow
+    -main content: takes up remaining space between header and footer, centers content
+    -nav: centers content*/
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.picture {
+    width: 200px;
+    height: auto;
+    border: solid black;
+    border-radius: 5px;
+}
+
+/*Task 1*/
+.nav {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 2;
+    justify-content: space-around; /*Task 3*/
+    padding: 15px;
+    border: solid black;
+    border-radius: 5px
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+    border: solid rgb(145, 188, 253);
+    border-radius: 5px;
+    font-weight: bold;
+    color: green;
+    align-items: center; /*Task 3*/
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    border: solid black;
+    border-radius: 5px;
+    margin: 5px;
+    align-items: center; /*Task 3*/
+    text-align: center;
+
+}
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /*Task 3*/
+    border: solid black;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    margin: 5px
+    
+}
+.footer li{
+    display: flex;
+    align-content: center; /*Task 3*/
+}
+
+.footer ol, .footer ul, .footer p {
+    border: solid grey;
+    border-radius: 5px;
+    
+}
+
+/*Task 2*/
+
+
+@media screen and (max-width: 600px) {
+    .nav, .footer {
+        flex-direction: column;
+    }
+
+    .box1 {
+        display: inline-block;
+        position: relative;
+        right: 1px;
+    }
+    .box2 {
+        float: left;
+        width: 30%;
+    }
+    .clearfix {
+        clear: both;
+    }
+}
