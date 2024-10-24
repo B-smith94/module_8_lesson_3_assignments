@@ -1,0 +1,43 @@
+/*Task 1: Create a Basic CSS Grid Layout
+    -should include header, main content, and footer
+    -Main content: divided into 2 columns (content and sidebar)
+Task 2: Implement Responsive Design Using CSS Grid
+    -Modify Grid layout to be responsive
+    -Media Query: stack content and sidebar vertically at 600px
+Task 3: Advanced Grid Layout with Template Columns and Rows
+    -Specify size of oclumns and rows using "grid-template-colums" and Grid-template-rows
+    -Experiment with fractional units (fr) and fixed sizes (ie: pixels) for balanced layout*/
+
+/*Task 1*/
+.grid-container {
+    display: grid;
+    border: solid black;
+    padding: 5px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr .01fr;
+}
+
+.item1, .item2, .footer{
+    display: grid;
+    border: solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.footer {
+    grid-area: 2 / span 2;
+}
+
+/*Task 2*/
+@media only screen and (max-width: 600px) {
+    
+    .item1 {
+        grid-area: 1 / span 2;
+    }
+    .item2 {
+        grid-area: 2 / span 2;
+    }
+    .footer {
+        grid-area: 3 / span 2;
+    }
+}
